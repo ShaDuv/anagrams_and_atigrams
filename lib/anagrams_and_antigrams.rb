@@ -5,9 +5,7 @@ class Anagram
   end
 
   def parse_word(word)
-    word = word.downcase.gsub(/[^A-Za-z]/, '').delete(' ').split('').sort
-    puts word.join
-    word
+    word.downcase.gsub(/[^A-Za-z]/, '').delete(' ').split('').sort
   end
 
   def is_anagram?
