@@ -1,7 +1,7 @@
 class Anagram
   def initialize(first_word, second_word)
-    @first_word = first_word.delete(' ').split('').sort
-    @second_word = second_word.delete(' ').split('').sort
+    @first_word = first_word.downcase.delete(' ').split('').sort
+    @second_word = second_word.downcase.delete(' ').split('').sort
   end
 
   def anagram_checker
