@@ -1,8 +1,9 @@
 require 'rspec'
 require 'anagrams_and_antigrams'
 
-describe('anagram') do
+describe('anagram_checker') do
   it("checks if two words are anagrams") do
-    expect(anagram("listen")).to(eq("silent"))
+    anagram_test = Anagram.new('listen', 'silent')
+    expect(anagram_test.anagram_checker).to(eq("Yeah, that's an anagram."))
   end
 end
