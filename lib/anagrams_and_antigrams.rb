@@ -1,22 +1,26 @@
 class Anagram
   def initialize(first_word, second_word)
-    @first_word = first_word.downcase.delete(' ').split('').sort
-    @second_word = second_word.downcase.delete(' ').split('').sort
+    @first_word = self.parse_word(first_word)
+    @second_word = self.parse_word(second_word)
   end
 
-  def anagram_checker
-    if self.validate_word
-      if @first_word == @second_word
-      "Yeah, that's an anagram."
-      else
-       "Uh, no, that's not an anagram"
-      end
-    else  'You need to input actual words; like "yurb"'
+  def parse_word(word)
+    word = word.downcase.gsub(/[^A-Za-z]/, '').delete(' ').split('').sort
+    puts word.join
+    word
   end
-end
+
+  def is_anagram?
+    @first_word == @second_word
+  end
+
+  def is_antigram?
+    @first_word & @second_word == []
+  end
 
   def validate_word
-     @first_word.include?('a') ||@first_word.include?('e') ||@first_word.include?('i') ||@first_word.include?('o') ||@first_word.include?('u') ||@first_word.include?('y')
-
-    end
+    @first_word.include?('a') ||@first_word.include?('e') ||@first_word.include?('i') ||@first_word.include?('o') ||@first_word.include?('u') ||@first_word.include?('y')
+  end
 end
+
+#https://ruby-doc.org/core-2.6.3/Array.html?fbclid=IwAR3FKHlZMqPg12Xbp9uxZBjMj_Jvg757BLG5vo2BM5DbJC_Tt-EEsN-jixY#method-i-26
