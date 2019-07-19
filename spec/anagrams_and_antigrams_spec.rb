@@ -10,4 +10,10 @@ describe('anagram_checker') do
     anagram_test = Anagram.new('Listen', 'silent')
     expect(anagram_test.anagram_checker).to(eq("Yeah, that's an anagram."))
   end
+
+  it("check if the inputs are words; which is defined by containing a vowel") do
+    anagram_test = Anagram.new('yurb', 'ruby')
+    expect(anagram_test.anagram_checker).to(eq("Yeah, that's an anagram."))
+  end
+
 end

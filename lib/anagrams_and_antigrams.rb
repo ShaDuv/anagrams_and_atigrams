@@ -5,9 +5,18 @@ class Anagram
   end
 
   def anagram_checker
-    if @first_word == @second_word
+    if self.validate_word
+      if @first_word == @second_word
       "Yeah, that's an anagram."
-    else "Uh, no, that's not an anagram"
-    end
+      else
+       "Uh, no, that's not an anagram"
+      end
+    else  'You need to input actual words; like "yurb"'
   end
+end
+
+  def validate_word
+     @first_word.include?('a') ||@first_word.include?('e') ||@first_word.include?('i') ||@first_word.include?('o') ||@first_word.include?('u') ||@first_word.include?('y')
+
+    end
 end
